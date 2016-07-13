@@ -10,7 +10,9 @@ import Foundation
 import UIKit
 
 let baseURL = "https://www.googleapis.com/youtube/v3/"
-let playlistSuffix = "playlists?part=snippet&maxResults=50"
+let playlistItemsSuffix = "playlistItems?"
+let playlistSuffix = "playlists?"
+let suffixParameters = "part=snippet&maxResults=50"
 let channelId = "&channelId=UCBVCi5JbYmfG3q5MEuoWdOw"
 let APIkey = "&key=AIzaSyBV2lTiVQqrpoxkUdgCtQ7utwRVwjgNFTg"
 
@@ -19,12 +21,13 @@ let YoutubePostNotification = "fetchedAllPlaylists"
 class YoutubeAPI {
     static let sharedInstance = YoutubeAPI()
     var playlist: Playlist!
+    var playlistItems: Playlist!
     var imageDictionary = NSMutableDictionary()
     
     func getPlaylistModel() {
-        let string = baseURL + playlistSuffix + channelId + APIkey
+        let string = baseURL + playlistSuffix + suffixParameters + channelId + APIkey
         let url = NSURL(string: string)
-        
+
         let task = NSURLSession.sharedSession().dataTaskWithURL(url!, completionHandler: {(data, reponse, error) in
             if error == nil {
                 do {
@@ -37,7 +40,25 @@ class YoutubeAPI {
                 }
             }
         })
+        task.resume()
+    }
+    
+    func getPlaylistItems(playlistId: String) {
+        let urlString = baseURL + playlistItemsSuffix + suffixParameters + "&playlistId=" + playlistId + APIkey
+        let url = NSURL(string: urlString)
         
+        let task = NSURLSession.sharedSession().dataTaskWithURL(url!, completionHandler: {(data, reponse, error) in
+            if error == nil {
+                do {
+                    let jsonResults = try NSJSONSerialization.JSONObjectWithData(data!, options: [])
+                    self.playlistItems = Playlist(dictionary: jsonResults as! NSDictionary)
+                    NSNotificationCenter.defaultCenter().postNotificationName(YoutubePostNotification, object: nil)
+                } catch {
+                    // failure
+                    print("Fetch failed: \((error as NSError).localizedDescription)")
+                }
+            }
+        })
         task.resume()
     }
     

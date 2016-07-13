@@ -37,7 +37,7 @@
                                                     <rect key="frame" x="40" y="0.0" width="560" height="300"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IaB-ul-4OJ">
-                                                    <rect key="frame" x="8" y="315" width="624" height="30"/>
+                                                    <rect key="frame" x="40" y="315" width="560" height="30"/>
                                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.25475084459459457" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="P4R-vf-Jnv"/>
@@ -53,7 +53,7 @@
                                         <constraints>
                                             <constraint firstItem="IaB-ul-4OJ" firstAttribute="bottom" secondItem="M6D-6r-LK6" secondAttribute="bottomMargin" constant="-7" id="7oz-DQ-uqY"/>
                                             <constraint firstItem="IaB-ul-4OJ" firstAttribute="centerX" secondItem="T1K-cD-FrT" secondAttribute="centerX" id="api-fh-kUu"/>
-                                            <constraint firstItem="IaB-ul-4OJ" firstAttribute="leading" secondItem="M6D-6r-LK6" secondAttribute="leadingMargin" id="cHN-Mn-pCG"/>
+                                            <constraint firstItem="IaB-ul-4OJ" firstAttribute="leading" secondItem="M6D-6r-LK6" secondAttribute="leadingMargin" constant="32" id="cHN-Mn-pCG"/>
                                             <constraint firstAttribute="bottom" secondItem="T1K-cD-FrT" secondAttribute="bottom" constant="60" id="gcs-bz-eiC"/>
                                             <constraint firstItem="T1K-cD-FrT" firstAttribute="leading" secondItem="M6D-6r-LK6" secondAttribute="leading" constant="40" id="iGY-lq-jHf"/>
                                             <constraint firstItem="T1K-cD-FrT" firstAttribute="top" secondItem="M6D-6r-LK6" secondAttribute="top" id="pnI-Rl-IDR"/>
@@ -79,11 +79,70 @@
                     <size key="freeformSize" width="1224" height="700"/>
                     <connections>
                         <outlet property="collectionView" destination="gsD-N7-WuC" id="5aN-wD-n6m"/>
+                        <segue destination="3As-VE-6pU" kind="show" identifier="PresentPlayerItems" id="feW-kg-eks"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="325" y="239"/>
+        </scene>
+        <!--Playlist ItemsVC-->
+        <scene sceneID="hj6-us-vJf">
+            <objects>
+                <viewController id="3As-VE-6pU" customClass="PlaylistItemsVC" customModule="Udacity_TVOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xSj-1L-Inp"/>
+                        <viewControllerLayoutGuide type="bottom" id="Q7M-wE-Y7O"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UDc-MZ-Q5g">
+                        <rect key="frame" x="0.0" y="0.0" width="1224" height="700"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="480" placeholderIntrinsicHeight="360" translatesAutoresizingMaskIntoConstraints="NO" id="lxi-KU-9c1">
+                                <rect key="frame" x="724" y="146" width="480" height="360"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="66" sectionHeaderHeight="40" sectionFooterHeight="40" translatesAutoresizingMaskIntoConstraints="NO" id="9BC-XM-N7G">
+                                <rect key="frame" x="0.0" y="20" width="716" height="660"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="716" id="V6a-hc-CKZ"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="playlistItemId" id="DQU-8t-cSY">
+                                        <rect key="frame" x="0.0" y="54" width="716" height="66"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DQU-8t-cSY" id="6da-Am-DiT">
+                                            <rect key="frame" x="0.0" y="0.0" width="700" height="66"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="3As-VE-6pU" id="wYN-wc-hbr"/>
+                                    <outlet property="delegate" destination="3As-VE-6pU" id="7YM-AS-4V0"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lxi-KU-9c1" firstAttribute="top" secondItem="xSj-1L-Inp" secondAttribute="bottom" constant="146" id="28v-Kb-vg9"/>
+                            <constraint firstItem="9BC-XM-N7G" firstAttribute="bottom" secondItem="Q7M-wE-Y7O" secondAttribute="top" constant="-20" id="L1a-rJ-x2C"/>
+                            <constraint firstItem="9BC-XM-N7G" firstAttribute="top" secondItem="xSj-1L-Inp" secondAttribute="bottom" constant="20" id="Wwg-OQ-dkS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lxi-KU-9c1" secondAttribute="trailing" id="gDK-md-WBN"/>
+                            <constraint firstItem="Q7M-wE-Y7O" firstAttribute="top" secondItem="lxi-KU-9c1" secondAttribute="bottom" constant="194" id="jKb-f0-5bO"/>
+                            <constraint firstItem="lxi-KU-9c1" firstAttribute="leading" secondItem="9BC-XM-N7G" secondAttribute="trailing" constant="8" id="xaz-e7-tDG"/>
+                            <constraint firstItem="9BC-XM-N7G" firstAttribute="leading" secondItem="UDc-MZ-Q5g" secondAttribute="leading" id="y04-dp-aqm"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="lxi-KU-9c1" id="cYf-1i-pkK"/>
+                        <outlet property="tableView" destination="9BC-XM-N7G" id="32f-S7-7bV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XtP-Mn-gcb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1679" y="391"/>
         </scene>
     </scenes>
 </document>

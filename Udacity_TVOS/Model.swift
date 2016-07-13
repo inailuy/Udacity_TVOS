@@ -9,17 +9,19 @@
 import Foundation
 
 struct Playlist {
-    
     var etag :String
     var items :[Item]
     var kind :String
-    var nextPageToken :String
+    var nextPageToken :String?
     var pageInfo :PageInfo
     
     init(dictionary :NSDictionary){
         etag = dictionary[Key.etag.rawValue] as! String
         kind = dictionary[Key.etag.rawValue] as! String
-        nextPageToken = dictionary[Key.nextPageToken.rawValue] as! String
+        if let obj = dictionary[Key.nextPageToken.rawValue] {
+            nextPageToken = obj as? String
+        }
+        
         pageInfo = PageInfo(dictionary: dictionary[Key.pageInfo.rawValue] as! NSDictionary)
         
         var tmpArray = [Item]()
@@ -32,7 +34,6 @@ struct Playlist {
 }
 
 struct Item {
-    
     var etag :String
     var id :String
     var kind :String
@@ -50,7 +51,7 @@ struct Snippet {
     var channelId :String
     var channelTitle :String
     var description :String
-    var localized :Localized
+    var localized :Localized?
     var publishedAt :String
     var thumbnails :Thumbnails
     var title :String
@@ -59,7 +60,9 @@ struct Snippet {
         channelId = dictioanry[Key.channelId.rawValue] as! String
         channelTitle = dictioanry[Key.channelTitle.rawValue] as! String
         description = dictioanry[Key.description.rawValue] as! String
-        localized = Localized(dictionary: dictioanry[Key.localized.rawValue] as! NSDictionary)
+        if let obj = dictioanry[Key.localized.rawValue] {
+            localized = Localized(dictionary: obj as! NSDictionary)
+        }
         publishedAt = dictioanry[Key.publishedAt.rawValue] as! String
         thumbnails = Thumbnails(dictioanry: dictioanry[Key.thumbnails.rawValue] as! NSDictionary)
         title = dictioanry[Key.title.rawValue] as! String
@@ -80,11 +83,19 @@ struct Thumbnails {
     var defaults :ThumbnailObject
     var high :ThumbnailObject
     var medium :ThumbnailObject
+    var maxres :ThumbnailObject?
+    var standard :ThumbnailObject?
     
     init(dictioanry:NSDictionary) {
         defaults = ThumbnailObject(dictionary: dictioanry[Key.defaults.rawValue] as! NSDictionary)
         high = ThumbnailObject(dictionary: dictioanry[Key.high.rawValue] as! NSDictionary)
         medium = ThumbnailObject(dictionary: dictioanry[Key.medium.rawValue] as! NSDictionary)
+        if let obj = dictioanry[Key.maxres.rawValue] {
+            maxres = ThumbnailObject(dictionary: obj as! NSDictionary)
+        }
+        if let obj = dictioanry[Key.standard.rawValue] {
+            standard = ThumbnailObject(dictionary: obj as! NSDictionary)
+        }
     }
 }
 
@@ -131,6 +142,8 @@ enum Key: String {
     case defaults = "default"
     case high = "high"
     case medium = "medium"
+    case maxres = "maxres"
+    case standard = "standard"
     
     case height = "height"
     case url = "url"
