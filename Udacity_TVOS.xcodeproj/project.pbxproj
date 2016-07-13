@@ -11,7 +11,7 @@
 		333D867D1D31C74C0069E5A7 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333D867B1D31C74C0069E5A7 /* Model.swift */; };
 		333D867E1D31C74C0069E5A7 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333D867B1D31C74C0069E5A7 /* Model.swift */; };
 		338EE43A1D2F988A00DD6C44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338EE4391D2F988A00DD6C44 /* AppDelegate.swift */; };
-		338EE43C1D2F988A00DD6C44 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338EE43B1D2F988A00DD6C44 /* ViewController.swift */; };
+		338EE43C1D2F988A00DD6C44 /* PlaylistsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338EE43B1D2F988A00DD6C44 /* PlaylistsVC.swift */; };
 		338EE43F1D2F988A00DD6C44 /* Udacity_TVOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 338EE43D1D2F988A00DD6C44 /* Udacity_TVOS.xcdatamodeld */; };
 		338EE4421D2F988A00DD6C44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 338EE4401D2F988A00DD6C44 /* Main.storyboard */; };
 		338EE4441D2F988A00DD6C44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 338EE4431D2F988A00DD6C44 /* Assets.xcassets */; };
@@ -43,7 +43,7 @@
 		333D867B1D31C74C0069E5A7 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		338EE4361D2F988A00DD6C44 /* Udacity_TVOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Udacity_TVOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		338EE4391D2F988A00DD6C44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		338EE43B1D2F988A00DD6C44 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		338EE43B1D2F988A00DD6C44 /* PlaylistsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistsVC.swift; sourceTree = "<group>"; };
 		338EE43E1D2F988A00DD6C44 /* Udacity_TVOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Udacity_TVOS.xcdatamodel; sourceTree = "<group>"; };
 		338EE4411D2F988A00DD6C44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		338EE4431D2F988A00DD6C44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -106,8 +106,8 @@
 			isa = PBXGroup;
 			children = (
 				338EE4391D2F988A00DD6C44 /* AppDelegate.swift */,
-				338EE43B1D2F988A00DD6C44 /* ViewController.swift */,
 				338EE4401D2F988A00DD6C44 /* Main.storyboard */,
+				338EE43B1D2F988A00DD6C44 /* PlaylistsVC.swift */,
 				338EE4671D30721400DD6C44 /* YoutubeAPI.swift */,
 				333D867B1D31C74C0069E5A7 /* Model.swift */,
 				338EE4431D2F988A00DD6C44 /* Assets.xcassets */,
@@ -266,7 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				333D867C1D31C74C0069E5A7 /* Model.swift in Sources */,
-				338EE43C1D2F988A00DD6C44 /* ViewController.swift in Sources */,
+				338EE43C1D2F988A00DD6C44 /* PlaylistsVC.swift in Sources */,
 				338EE43F1D2F988A00DD6C44 /* Udacity_TVOS.xcdatamodeld in Sources */,
 				338EE4681D30721400DD6C44 /* YoutubeAPI.swift in Sources */,
 				338EE43A1D2F988A00DD6C44 /* AppDelegate.swift in Sources */,

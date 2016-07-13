@@ -8,36 +8,6 @@
 
 import Foundation
 
-enum Key: String {
-    case etag = "etag"
-    case items = "items"
-    case kind = "kind"
-    case nextPageToken = "nextPageToken"
-    case pageInfo = "pageInfo"
-    
-    case id = "id"
-    case snippet = "snippet"
-    
-    case channelId = "channelId"
-    case channelTitle = "channelTitle"
-    case description = "description"
-    case localized = "localized"
-    case publishedAt = "publishedAt"
-    case thumbnails = "thumbnails"
-    case title = "title"
-    
-    case defaults = "default"
-    case high = "high"
-    case medium = "medium"
-    
-    case height = "height"
-    case url = "url"
-    case width = "width"
-    
-    case resultsPerPage = "resultsPerPage"
-    case totalResults = "totalResults"
-}
-
 struct Playlist {
     
     var etag :String
@@ -138,4 +108,34 @@ struct PageInfo {
         resultsPerPage = dictionary[Key.resultsPerPage.rawValue] as! Int
         totalResults = dictionary[Key.totalResults.rawValue] as! Int
     }
+}
+
+enum Key: String {
+    case etag = "etag"
+    case items = "items"
+    case kind = "kind"
+    case nextPageToken = "nextPageToken"
+    case pageInfo = "pageInfo"
+    
+    case id = "id"
+    case snippet = "snippet"
+    
+    case channelId = "channelId"
+    case channelTitle = "channelTitle"
+    case description = "description"
+    case localized = "localized"
+    case publishedAt = "publishedAt"
+    case thumbnails = "thumbnails"
+    case title = "title"
+    
+    case defaults = "default"
+    case high = "high"
+    case medium = "medium"
+    
+    case height = "height"
+    case url = "url"
+    case width = "width"
+    
+    case resultsPerPage = "resultsPerPage"
+    case totalResults = "totalResults"
 }
