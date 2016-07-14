@@ -55,6 +55,7 @@ struct Snippet {
     var publishedAt :String
     var thumbnails :Thumbnails
     var title :String
+    var resourceId :ResourceId?
     
     init(dictioanry: NSDictionary) {
         channelId = dictioanry[Key.channelId.rawValue] as! String
@@ -66,6 +67,9 @@ struct Snippet {
         publishedAt = dictioanry[Key.publishedAt.rawValue] as! String
         thumbnails = Thumbnails(dictioanry: dictioanry[Key.thumbnails.rawValue] as! NSDictionary)
         title = dictioanry[Key.title.rawValue] as! String
+        if let obj = dictioanry[Key.resourceId.rawValue] {
+            resourceId = ResourceId(dictionary: obj as! NSDictionary)
+        }
     }
 }
 
@@ -121,6 +125,16 @@ struct PageInfo {
     }
 }
 
+struct ResourceId {
+    var kind :String
+    var videoId :String
+    
+    init(dictionary: NSDictionary){
+        kind = dictionary[Key.kind.rawValue] as! String
+        videoId = dictionary[Key.videoId.rawValue] as! String
+    }
+}
+
 enum Key: String {
     case etag = "etag"
     case items = "items"
@@ -138,6 +152,7 @@ enum Key: String {
     case publishedAt = "publishedAt"
     case thumbnails = "thumbnails"
     case title = "title"
+    case resourceId = "resourceId"
     
     case defaults = "default"
     case high = "high"
@@ -151,4 +166,5 @@ enum Key: String {
     
     case resultsPerPage = "resultsPerPage"
     case totalResults = "totalResults"
+    case videoId = "videoId"
 }

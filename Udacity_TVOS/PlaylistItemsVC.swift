@@ -13,6 +13,7 @@ class PlaylistItemsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var imageView: UIImageView!
     var selectedItem :Item?
+    var selectedIndexPath :NSIndexPath?
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -28,6 +29,14 @@ class PlaylistItemsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         NSNotificationCenter.defaultCenter().removeObserver(self, name: YoutubePostNotification, object: nil)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if segue.identifier == "videoSegue" {
+            let vc = segue.destinationViewController as! VideoPlayerVC
+            let item = YoutubeAPI.sharedInstance.playlistItems.items[selectedIndexPath!.row] as Item
+            vc.videoId = item.snippet.resourceId?.videoId
+        }
     }
     
     @objc func playlistFinishedLoading(notification: NSNotification){
@@ -50,15 +59,30 @@ class PlaylistItemsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         let cell = tableView.dequeueReusableCellWithIdentifier("playlistItemId")
         cell?.textLabel?.text = item.snippet.title
         
+        if cell!.gestureRecognizers?.count == nil {
+            let tap = UITapGestureRecognizer(target: self, action: #selector(PlaylistItemsVC.tapped(_:)))
+            tap.allowedPressTypes = [NSNumber(integer: UIPressType.Select.rawValue)]
+            cell!.addGestureRecognizer(tap)
+        }
+        
         return cell!
+    }
+    
+    func tapped(gesture: UITapGestureRecognizer) {
+        if let cell = gesture.view as? UITableViewCell {
+            selectedIndexPath = tableView.indexPathForCell(cell)
+            performSegueWithIdentifier("videoSegue", sender: nil)
+        }
     }
     
     func tableView(tableView: UITableView, didUpdateFocusInContext context: UITableViewFocusUpdateContext, withAnimationCoordinator coordinator: UIFocusAnimationCoordinator) {
         let index = context.nextFocusedIndexPath
-        let item = YoutubeAPI.sharedInstance.playlistItems.items[index!.row] as Item
-        YoutubeAPI.sharedInstance.loadImages(item.snippet.thumbnails.high.url, completion: {
-            (result: UIImage) in
+        if index != nil {
+            let item = YoutubeAPI.sharedInstance.playlistItems.items[index!.row] as Item
+            YoutubeAPI.sharedInstance.loadImages(item.snippet.thumbnails.high.url, completion: {
+                (result: UIImage) in
                 self.imageView.image = result
-        })
+            })
+        }
     }
 }

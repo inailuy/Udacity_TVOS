@@ -53,6 +53,7 @@ class YoutubeAPI {
                     let jsonResults = try NSJSONSerialization.JSONObjectWithData(data!, options: [])
                     self.playlistItems = Playlist(dictionary: jsonResults as! NSDictionary)
                     NSNotificationCenter.defaultCenter().postNotificationName(YoutubePostNotification, object: nil)
+                    print(jsonResults)
                 } catch {
                     // failure
                     print("Fetch failed: \((error as NSError).localizedDescription)")

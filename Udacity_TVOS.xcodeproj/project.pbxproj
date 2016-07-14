@@ -10,6 +10,13 @@
 		333D867C1D31C74C0069E5A7 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333D867B1D31C74C0069E5A7 /* Model.swift */; };
 		333D867D1D31C74C0069E5A7 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333D867B1D31C74C0069E5A7 /* Model.swift */; };
 		333D867E1D31C74C0069E5A7 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333D867B1D31C74C0069E5A7 /* Model.swift */; };
+		334174011D370F6600AC53BE /* VideoPlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334174001D370F6600AC53BE /* VideoPlayerVC.swift */; };
+		334174021D370F6600AC53BE /* VideoPlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334174001D370F6600AC53BE /* VideoPlayerVC.swift */; };
+		334174031D370F6600AC53BE /* VideoPlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334174001D370F6600AC53BE /* VideoPlayerVC.swift */; };
+		334174051D37240700AC53BE /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 334174041D37240700AC53BE /* AVFoundation.framework */; };
+		334174091D37245200AC53BE /* HCYoutubeParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 334174081D37245200AC53BE /* HCYoutubeParser.m */; };
+		3341740A1D37245200AC53BE /* HCYoutubeParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 334174081D37245200AC53BE /* HCYoutubeParser.m */; };
+		3341740B1D37245200AC53BE /* HCYoutubeParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 334174081D37245200AC53BE /* HCYoutubeParser.m */; };
 		3383D56C1D36EF8400C8AEF4 /* PlaylistItemsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3383D56B1D36EF8400C8AEF4 /* PlaylistItemsVC.swift */; };
 		3383D56D1D36EF8400C8AEF4 /* PlaylistItemsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3383D56B1D36EF8400C8AEF4 /* PlaylistItemsVC.swift */; };
 		3383D56E1D36EF8400C8AEF4 /* PlaylistItemsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3383D56B1D36EF8400C8AEF4 /* PlaylistItemsVC.swift */; };
@@ -44,6 +51,11 @@
 
 /* Begin PBXFileReference section */
 		333D867B1D31C74C0069E5A7 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		334174001D370F6600AC53BE /* VideoPlayerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPlayerVC.swift; sourceTree = "<group>"; };
+		334174041D37240700AC53BE /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		334174061D37245100AC53BE /* Udacity_TVOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Udacity_TVOS-Bridging-Header.h"; sourceTree = "<group>"; };
+		334174071D37245200AC53BE /* HCYoutubeParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCYoutubeParser.h; sourceTree = "<group>"; };
+		334174081D37245200AC53BE /* HCYoutubeParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCYoutubeParser.m; sourceTree = "<group>"; };
 		3383D56B1D36EF8400C8AEF4 /* PlaylistItemsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistItemsVC.swift; sourceTree = "<group>"; };
 		338EE4361D2F988A00DD6C44 /* Udacity_TVOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Udacity_TVOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		338EE4391D2F988A00DD6C44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				334174051D37240700AC53BE /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +102,7 @@
 		338EE42D1D2F988A00DD6C44 = {
 			isa = PBXGroup;
 			children = (
+				334174041D37240700AC53BE /* AVFoundation.framework */,
 				338EE4381D2F988A00DD6C44 /* Udacity_TVOS */,
 				338EE44D1D2F988B00DD6C44 /* Udacity_TVOSTests */,
 				338EE4581D2F988B00DD6C44 /* Udacity_TVOSUITests */,
@@ -113,11 +127,15 @@
 				338EE4401D2F988A00DD6C44 /* Main.storyboard */,
 				338EE43B1D2F988A00DD6C44 /* PlaylistsVC.swift */,
 				3383D56B1D36EF8400C8AEF4 /* PlaylistItemsVC.swift */,
+				334174001D370F6600AC53BE /* VideoPlayerVC.swift */,
 				338EE4671D30721400DD6C44 /* YoutubeAPI.swift */,
 				333D867B1D31C74C0069E5A7 /* Model.swift */,
+				334174071D37245200AC53BE /* HCYoutubeParser.h */,
+				334174081D37245200AC53BE /* HCYoutubeParser.m */,
 				338EE4431D2F988A00DD6C44 /* Assets.xcassets */,
 				338EE4451D2F988A00DD6C44 /* Info.plist */,
 				338EE43D1D2F988A00DD6C44 /* Udacity_TVOS.xcdatamodeld */,
+				334174061D37245100AC53BE /* Udacity_TVOS-Bridging-Header.h */,
 			);
 			path = Udacity_TVOS;
 			sourceTree = "<group>";
@@ -271,8 +289,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				333D867C1D31C74C0069E5A7 /* Model.swift in Sources */,
+				334174091D37245200AC53BE /* HCYoutubeParser.m in Sources */,
 				338EE43C1D2F988A00DD6C44 /* PlaylistsVC.swift in Sources */,
 				338EE43F1D2F988A00DD6C44 /* Udacity_TVOS.xcdatamodeld in Sources */,
+				334174011D370F6600AC53BE /* VideoPlayerVC.swift in Sources */,
 				338EE4681D30721400DD6C44 /* YoutubeAPI.swift in Sources */,
 				338EE43A1D2F988A00DD6C44 /* AppDelegate.swift in Sources */,
 				3383D56C1D36EF8400C8AEF4 /* PlaylistItemsVC.swift in Sources */,
@@ -284,9 +304,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				333D867D1D31C74C0069E5A7 /* Model.swift in Sources */,
+				3341740A1D37245200AC53BE /* HCYoutubeParser.m in Sources */,
 				3383D56D1D36EF8400C8AEF4 /* PlaylistItemsVC.swift in Sources */,
 				338EE4691D30721400DD6C44 /* YoutubeAPI.swift in Sources */,
 				338EE44F1D2F988B00DD6C44 /* Udacity_TVOSTests.swift in Sources */,
+				334174021D370F6600AC53BE /* VideoPlayerVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,9 +317,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				333D867E1D31C74C0069E5A7 /* Model.swift in Sources */,
+				3341740B1D37245200AC53BE /* HCYoutubeParser.m in Sources */,
 				3383D56E1D36EF8400C8AEF4 /* PlaylistItemsVC.swift in Sources */,
 				338EE46A1D30721400DD6C44 /* YoutubeAPI.swift in Sources */,
 				338EE45A1D2F988B00DD6C44 /* Udacity_TVOSUITests.swift in Sources */,
+				334174031D370F6600AC53BE /* VideoPlayerVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,6 +446,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "inailuy.Udacity-TVOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Udacity_TVOS/Udacity_TVOS-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -437,6 +462,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "inailuy.Udacity-TVOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Udacity_TVOS/Udacity_TVOS-Bridging-Header.h";
 			};
 			name = Release;
 		};
