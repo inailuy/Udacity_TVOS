@@ -9,8 +9,9 @@
 import Foundation
 import UIKit
 import AVFoundation
+import AVKit
 
-class VideoPlayerVC: UIViewController {
+class VideoPlayerVC: AVPlayerViewController {
     var videoId :String!
 
     override func viewDidLoad() {
@@ -24,6 +25,22 @@ class VideoPlayerVC: UIViewController {
         let avPlayerLayer  = AVPlayerLayer(player: avPlayer)
         avPlayerLayer.frame = CGRectMake(0, 0, self.view.frame.width, self.view.frame.height);
         self.view.layer.addSublayer(avPlayerLayer)
+        
+        let playerViewController = AVPlayerViewController()
+        playerViewController.player = avPlayer
+        
+        addChildViewController(playerViewController)
+        view.addSubview(playerViewController.view)
+        playerViewController.didMoveToParentViewController(self)
+
         avPlayer.play()
+        
+        let tapGestureRec = UITapGestureRecognizer(target: self, action: #selector(VideoPlayerVC.menuButtonPressed(_:)))
+        tapGestureRec.allowedPressTypes = [NSNumber(integer: UIPressType.Menu.rawValue)]
+        view.addGestureRecognizer(tapGestureRec)
+    }
+    
+    func menuButtonPressed(gesture: UITapGestureRecognizer) {
+            navigationController?.popViewControllerAnimated(true)
     }
 }

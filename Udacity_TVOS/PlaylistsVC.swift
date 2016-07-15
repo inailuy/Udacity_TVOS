@@ -64,7 +64,7 @@ class PlaylistsVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
         }
         
         if cell.gestureRecognizers?.count == nil {
-            let tap = UITapGestureRecognizer(target: self, action: #selector(PlaylistsVC.tapped(_:)))
+            let tap = UITapGestureRecognizer(target: self, action: #selector(PlaylistsVC.collectionCellTapped(_:)))
             tap.allowedPressTypes = [NSNumber(integer: UIPressType.Select.rawValue)]
             cell.addGestureRecognizer(tap)
         }
@@ -72,7 +72,7 @@ class PlaylistsVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
         return cell
     }
     
-    func tapped(gesture: UITapGestureRecognizer) {
+    func collectionCellTapped(gesture: UITapGestureRecognizer) {
         if let cell = gesture.view as? UICollectionViewCell {
             selectedIndexPath = collectionView.indexPathForCell(cell)
             performSegueWithIdentifier("PresentPlayerItems", sender: nil)
@@ -89,11 +89,12 @@ class PlaylistsVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
     
     override func didUpdateFocusInContext(context: UIFocusUpdateContext, withAnimationCoordinator coordinator: UIFocusAnimationCoordinator) {
         if let prev = context.previouslyFocusedView {
-            let imgView = prev.viewWithTag(Tag.ImageView.rawValue) as! UIImageView
-            let label = prev.viewWithTag(Tag.Label.rawValue) as! UILabel
+            let imgView = prev.viewWithTag(Tag.ImageView.rawValue) as? UIImageView
+            let label = prev.viewWithTag(Tag.Label.rawValue) as? UILabel
+            print(label?.text)
             UIView.animateWithDuration(0.1, animations: {() -> Void in
-                imgView.frame = self.defaultFrameImg
-                label.frame = self.defaultFrameLabel
+                imgView!.frame = self.defaultFrameImg//TODO:crashing bug
+                label!.frame = self.defaultFrameLabel
             })
         }
         
