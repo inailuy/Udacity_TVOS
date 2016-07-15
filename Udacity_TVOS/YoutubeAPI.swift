@@ -27,14 +27,42 @@ class YoutubeAPI {
     func getPlaylistModel() {
         let string = baseURL + playlistSuffix + suffixParameters + channelId + APIkey
         let url = NSURL(string: string)
-
+        SVProgressHUD.show()
         let task = NSURLSession.sharedSession().dataTaskWithURL(url!, completionHandler: {(data, reponse, error) in
             if error == nil {
                 do {
                     let jsonResults = try NSJSONSerialization.JSONObjectWithData(data!, options: [])
                     self.playlist = Playlist(dictionary: jsonResults as! NSDictionary)
                     NSNotificationCenter.defaultCenter().postNotificationName(YoutubePostNotification, object: nil)
+                    SVProgressHUD.dismiss()
                     //print(jsonResults)
+                } catch {
+                    // failure
+                    print("Fetch failed: \((error as NSError).localizedDescription)")
+                }
+            }
+        })
+        task.resume()
+    }
+    
+    func getNextPlaylistModel() {
+        
+        let pageToken = "&pageToken=" + playlist.nextPageToken!
+        let string = baseURL + playlistSuffix + suffixParameters + channelId + pageToken + APIkey
+        let url = NSURL(string: string)
+        SVProgressHUD.show()
+        let task = NSURLSession.sharedSession().dataTaskWithURL(url!, completionHandler: {(data, reponse, error) in
+            if error == nil {
+                do {
+                    let jsonResults = try NSJSONSerialization.JSONObjectWithData(data!, options: [])
+                    // creating new array to later insert new items
+                    var array = self.playlist.items
+                    self.playlist = Playlist(dictionary: jsonResults as! NSDictionary)
+                    array.appendContentsOf(self.playlist.items)
+                    self.playlist.items = array
+                    
+                    NSNotificationCenter.defaultCenter().postNotificationName(YoutubePostNotification, object: nil)
+                    SVProgressHUD.dismiss()
                 } catch {
                     // failure
                     print("Fetch failed: \((error as NSError).localizedDescription)")
@@ -54,7 +82,7 @@ class YoutubeAPI {
                     let jsonResults = try NSJSONSerialization.JSONObjectWithData(data!, options: [])
                     self.playlistItems = Playlist(dictionary: jsonResults as! NSDictionary)
                     NSNotificationCenter.defaultCenter().postNotificationName(YoutubePostNotification, object: nil)
-                    print(jsonResults)
+                    //print(jsonResults)
                 } catch {
                     // failure
                     print("Fetch failed: \((error as NSError).localizedDescription)")

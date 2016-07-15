@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class PlaylistItemsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class PlaylistItemsVC: BaseVC, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var imageView: UIImageView!
     var selectedItem :Item?
@@ -17,13 +17,8 @@ class PlaylistItemsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let tapGestureRec = UITapGestureRecognizer(target: self, action: #selector(PlaylistItemsVC.menuButtonPressed(_:)))
-        tapGestureRec.allowedPressTypes = [NSNumber(integer: UIPressType.Menu.rawValue)]
-        view.addGestureRecognizer(tapGestureRec)
-        
+        self.title = selectedItem?.snippet.title
         YoutubeAPI.sharedInstance.getPlaylistItems((selectedItem?.id)!)
-        print(selectedItem)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -37,14 +32,15 @@ class PlaylistItemsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: YoutubePostNotification, object: nil)
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if segue.identifier == "videoSegue" {
             let vc = segue.destinationViewController as! VideoPlayerVC
             let item = YoutubeAPI.sharedInstance.playlistItems.items[selectedIndexPath!.row] as Item
-            vc.videoId = item.snippet.resourceId?.videoId
+            vc.item = item
+            vc.index = selectedIndexPath!.row
         }
     }
     
@@ -53,10 +49,6 @@ class PlaylistItemsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
             selectedIndexPath = tableView.indexPathForCell(cell)
             performSegueWithIdentifier("videoSegue", sender: nil)
         }
-    }
-    
-    func menuButtonPressed(gesture: UITapGestureRecognizer) {
-        navigationController?.popViewControllerAnimated(true)
     }
     
     @objc func playlistFinishedLoading(notification: NSNotification){
@@ -84,7 +76,6 @@ class PlaylistItemsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
             tap.allowedPressTypes = [NSNumber(integer: UIPressType.Select.rawValue)]
             cell!.addGestureRecognizer(tap)
         }
-        
         return cell!
     }
     

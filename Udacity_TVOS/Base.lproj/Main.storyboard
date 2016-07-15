@@ -5,10 +5,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--Catalog-->
         <scene sceneID="jlK-20-z1u">
             <objects>
-                <navigationController navigationBarHidden="YES" id="iyo-jj-Y0V" sceneMemberID="viewController">
+                <navigationController title="Catalog" id="iyo-jj-Y0V" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="uUb-fW-Vad">
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="145"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -33,7 +33,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1224" height="700"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gsD-N7-WuC">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gsD-N7-WuC">
                                 <rect key="frame" x="0.0" y="0.0" width="1224" height="700"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Ayh-lm-eDt">
                                     <size key="itemSize" width="640" height="360"/>
@@ -43,7 +43,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="id" id="M6D-6r-LK6">
-                                        <rect key="frame" x="292" y="0.0" width="640" height="360"/>
+                                        <rect key="frame" x="292" y="145" width="640" height="360"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="640" height="360"/>
@@ -115,11 +115,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="1224" height="700"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="480" placeholderIntrinsicHeight="360" translatesAutoresizingMaskIntoConstraints="NO" id="lxi-KU-9c1">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" placeholderIntrinsicWidth="480" placeholderIntrinsicHeight="360" translatesAutoresizingMaskIntoConstraints="NO" id="lxi-KU-9c1">
                                 <rect key="frame" x="724" y="146" width="480" height="360"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="66" sectionHeaderHeight="40" sectionFooterHeight="40" translatesAutoresizingMaskIntoConstraints="NO" id="9BC-XM-N7G">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="66" sectionHeaderHeight="40" sectionFooterHeight="40" translatesAutoresizingMaskIntoConstraints="NO" id="9BC-XM-N7G">
                                 <rect key="frame" x="0.0" y="20" width="716" height="660"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -127,7 +127,7 @@
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="playlistItemId" id="DQU-8t-cSY">
-                                        <rect key="frame" x="0.0" y="54" width="716" height="66"/>
+                                        <rect key="frame" x="0.0" y="199" width="716" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DQU-8t-cSY" id="6da-Am-DiT">
                                             <rect key="frame" x="0.0" y="0.0" width="700" height="66"/>
@@ -160,7 +160,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XtP-Mn-gcb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1679" y="391"/>
+            <point key="canvasLocation" x="1687" y="223"/>
         </scene>
         <!--Video PlayerVC-->
         <scene sceneID="l0v-59-7V3">
@@ -177,15 +177,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xsu-TP-PEm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4221" y="1284"/>
-        </scene>
-        <!--AV Player View Controller-->
-        <scene sceneID="mdk-Wk-2ob">
-            <objects>
-                <avPlayerViewController videoGravity="AVLayerVideoGravityResizeAspect" id="F78-DH-KEB" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uWb-bw-KQO" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3835" y="71"/>
+            <point key="canvasLocation" x="3277" y="223"/>
         </scene>
     </scenes>
 </document>

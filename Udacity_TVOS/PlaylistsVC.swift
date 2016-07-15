@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PlaylistsVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class PlaylistsVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate {
     @IBOutlet weak var collectionView: UICollectionView!
     
     let defaultFrameImg = CGRectMake(40, 0, 560, 300)
@@ -23,6 +23,11 @@ class PlaylistsVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
         case Label = 101
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        title = "Udacity Course Catalog"
+    }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         NSNotificationCenter.defaultCenter().addObserver(
@@ -34,7 +39,7 @@ class PlaylistsVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: YoutubePostNotification, object: nil)
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
     @objc func playlistFinishedLoading(notification: NSNotification){
@@ -91,10 +96,9 @@ class PlaylistsVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
         if let prev = context.previouslyFocusedView {
             let imgView = prev.viewWithTag(Tag.ImageView.rawValue) as? UIImageView
             let label = prev.viewWithTag(Tag.Label.rawValue) as? UILabel
-            print(label?.text)
             UIView.animateWithDuration(0.1, animations: {() -> Void in
-                imgView!.frame = self.defaultFrameImg//TODO:crashing bug
-                label!.frame = self.defaultFrameLabel
+                imgView?.frame = self.defaultFrameImg//TODO:crashing bug
+                label?.frame = self.defaultFrameLabel
             })
         }
         
@@ -105,6 +109,16 @@ class PlaylistsVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
                 imgView?.frame = self.focusFrameImg
                 label?.frame = self.defaultFrameLabel
             })
+        }
+    }
+    
+    //MARK: UIScrollViewDelegate 
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        //getting the scroll offset
+        let bottomEdge = scrollView.contentOffset.y + scrollView.frame.size.height
+        if bottomEdge >= scrollView.contentSize.height && YoutubeAPI.sharedInstance.playlist != nil {
+            //we are at the bottom
+            YoutubeAPI.sharedInstance.getNextPlaylistModel()
         }
     }
 }

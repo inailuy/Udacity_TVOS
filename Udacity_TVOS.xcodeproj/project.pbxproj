@@ -17,6 +17,24 @@
 		334174091D37245200AC53BE /* HCYoutubeParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 334174081D37245200AC53BE /* HCYoutubeParser.m */; };
 		3341740A1D37245200AC53BE /* HCYoutubeParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 334174081D37245200AC53BE /* HCYoutubeParser.m */; };
 		3341740B1D37245200AC53BE /* HCYoutubeParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 334174081D37245200AC53BE /* HCYoutubeParser.m */; };
+		3341740D1D38CD0300AC53BE /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3341740C1D38CD0300AC53BE /* BaseVC.swift */; };
+		3341740E1D38CD0300AC53BE /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3341740C1D38CD0300AC53BE /* BaseVC.swift */; };
+		3341740F1D38CD0300AC53BE /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3341740C1D38CD0300AC53BE /* BaseVC.swift */; };
+		3341741B1D39805F00AC53BE /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 334174121D39805F00AC53BE /* SVIndefiniteAnimatedView.m */; };
+		3341741C1D39805F00AC53BE /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 334174121D39805F00AC53BE /* SVIndefiniteAnimatedView.m */; };
+		3341741D1D39805F00AC53BE /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 334174121D39805F00AC53BE /* SVIndefiniteAnimatedView.m */; };
+		3341741E1D39805F00AC53BE /* SVProgressAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 334174141D39805F00AC53BE /* SVProgressAnimatedView.m */; };
+		3341741F1D39805F00AC53BE /* SVProgressAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 334174141D39805F00AC53BE /* SVProgressAnimatedView.m */; };
+		334174201D39805F00AC53BE /* SVProgressAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 334174141D39805F00AC53BE /* SVProgressAnimatedView.m */; };
+		334174211D39805F00AC53BE /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 334174161D39805F00AC53BE /* SVProgressHUD.bundle */; };
+		334174221D39805F00AC53BE /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 334174161D39805F00AC53BE /* SVProgressHUD.bundle */; };
+		334174231D39805F00AC53BE /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 334174161D39805F00AC53BE /* SVProgressHUD.bundle */; };
+		334174241D39805F00AC53BE /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 334174181D39805F00AC53BE /* SVProgressHUD.m */; };
+		334174251D39805F00AC53BE /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 334174181D39805F00AC53BE /* SVProgressHUD.m */; };
+		334174261D39805F00AC53BE /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 334174181D39805F00AC53BE /* SVProgressHUD.m */; };
+		334174271D39805F00AC53BE /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3341741A1D39805F00AC53BE /* SVRadialGradientLayer.m */; };
+		334174281D39805F00AC53BE /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3341741A1D39805F00AC53BE /* SVRadialGradientLayer.m */; };
+		334174291D39805F00AC53BE /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3341741A1D39805F00AC53BE /* SVRadialGradientLayer.m */; };
 		3383D56C1D36EF8400C8AEF4 /* PlaylistItemsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3383D56B1D36EF8400C8AEF4 /* PlaylistItemsVC.swift */; };
 		3383D56D1D36EF8400C8AEF4 /* PlaylistItemsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3383D56B1D36EF8400C8AEF4 /* PlaylistItemsVC.swift */; };
 		3383D56E1D36EF8400C8AEF4 /* PlaylistItemsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3383D56B1D36EF8400C8AEF4 /* PlaylistItemsVC.swift */; };
@@ -56,6 +74,17 @@
 		334174061D37245100AC53BE /* Udacity_TVOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Udacity_TVOS-Bridging-Header.h"; sourceTree = "<group>"; };
 		334174071D37245200AC53BE /* HCYoutubeParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCYoutubeParser.h; sourceTree = "<group>"; };
 		334174081D37245200AC53BE /* HCYoutubeParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCYoutubeParser.m; sourceTree = "<group>"; };
+		3341740C1D38CD0300AC53BE /* BaseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
+		334174111D39805F00AC53BE /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SVIndefiniteAnimatedView.h; path = SVProgressHUD/SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
+		334174121D39805F00AC53BE /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SVIndefiniteAnimatedView.m; path = SVProgressHUD/SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
+		334174131D39805F00AC53BE /* SVProgressAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SVProgressAnimatedView.h; path = SVProgressHUD/SVProgressAnimatedView.h; sourceTree = "<group>"; };
+		334174141D39805F00AC53BE /* SVProgressAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SVProgressAnimatedView.m; path = SVProgressHUD/SVProgressAnimatedView.m; sourceTree = "<group>"; };
+		334174151D39805F00AC53BE /* SVProgressHUD-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "SVProgressHUD-Prefix.pch"; path = "SVProgressHUD/SVProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
+		334174161D39805F00AC53BE /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SVProgressHUD.bundle; path = SVProgressHUD/SVProgressHUD.bundle; sourceTree = "<group>"; };
+		334174171D39805F00AC53BE /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SVProgressHUD.h; path = SVProgressHUD/SVProgressHUD.h; sourceTree = "<group>"; };
+		334174181D39805F00AC53BE /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SVProgressHUD.m; path = SVProgressHUD/SVProgressHUD.m; sourceTree = "<group>"; };
+		334174191D39805F00AC53BE /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SVRadialGradientLayer.h; path = SVProgressHUD/SVRadialGradientLayer.h; sourceTree = "<group>"; };
+		3341741A1D39805F00AC53BE /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SVRadialGradientLayer.m; path = SVProgressHUD/SVRadialGradientLayer.m; sourceTree = "<group>"; };
 		3383D56B1D36EF8400C8AEF4 /* PlaylistItemsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistItemsVC.swift; sourceTree = "<group>"; };
 		338EE4361D2F988A00DD6C44 /* Udacity_TVOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Udacity_TVOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		338EE4391D2F988A00DD6C44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +128,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		334174101D39804600AC53BE /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				334174111D39805F00AC53BE /* SVIndefiniteAnimatedView.h */,
+				334174121D39805F00AC53BE /* SVIndefiniteAnimatedView.m */,
+				334174131D39805F00AC53BE /* SVProgressAnimatedView.h */,
+				334174141D39805F00AC53BE /* SVProgressAnimatedView.m */,
+				334174151D39805F00AC53BE /* SVProgressHUD-Prefix.pch */,
+				334174161D39805F00AC53BE /* SVProgressHUD.bundle */,
+				334174171D39805F00AC53BE /* SVProgressHUD.h */,
+				334174181D39805F00AC53BE /* SVProgressHUD.m */,
+				334174191D39805F00AC53BE /* SVRadialGradientLayer.h */,
+				3341741A1D39805F00AC53BE /* SVRadialGradientLayer.m */,
+			);
+			name = SVProgressHUD;
+			sourceTree = "<group>";
+		};
+		3341742A1D3989E000AC53BE /* HCYoutubeParser */ = {
+			isa = PBXGroup;
+			children = (
+				334174071D37245200AC53BE /* HCYoutubeParser.h */,
+				334174081D37245200AC53BE /* HCYoutubeParser.m */,
+			);
+			name = HCYoutubeParser;
+			sourceTree = "<group>";
+		};
+		3341742B1D3989F000AC53BE /* ThridParty */ = {
+			isa = PBXGroup;
+			children = (
+				3341742A1D3989E000AC53BE /* HCYoutubeParser */,
+				334174101D39804600AC53BE /* SVProgressHUD */,
+			);
+			name = ThridParty;
+			sourceTree = "<group>";
+		};
 		338EE42D1D2F988A00DD6C44 = {
 			isa = PBXGroup;
 			children = (
@@ -128,10 +192,10 @@
 				338EE43B1D2F988A00DD6C44 /* PlaylistsVC.swift */,
 				3383D56B1D36EF8400C8AEF4 /* PlaylistItemsVC.swift */,
 				334174001D370F6600AC53BE /* VideoPlayerVC.swift */,
+				3341740C1D38CD0300AC53BE /* BaseVC.swift */,
 				338EE4671D30721400DD6C44 /* YoutubeAPI.swift */,
 				333D867B1D31C74C0069E5A7 /* Model.swift */,
-				334174071D37245200AC53BE /* HCYoutubeParser.h */,
-				334174081D37245200AC53BE /* HCYoutubeParser.m */,
+				3341742B1D3989F000AC53BE /* ThridParty */,
 				338EE4431D2F988A00DD6C44 /* Assets.xcassets */,
 				338EE4451D2F988A00DD6C44 /* Info.plist */,
 				338EE43D1D2F988A00DD6C44 /* Udacity_TVOS.xcdatamodeld */,
@@ -263,6 +327,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				338EE4441D2F988A00DD6C44 /* Assets.xcassets in Resources */,
+				334174211D39805F00AC53BE /* SVProgressHUD.bundle in Resources */,
 				338EE4421D2F988A00DD6C44 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,6 +336,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				334174221D39805F00AC53BE /* SVProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +344,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				334174231D39805F00AC53BE /* SVProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,9 +357,14 @@
 			files = (
 				333D867C1D31C74C0069E5A7 /* Model.swift in Sources */,
 				334174091D37245200AC53BE /* HCYoutubeParser.m in Sources */,
+				3341741E1D39805F00AC53BE /* SVProgressAnimatedView.m in Sources */,
 				338EE43C1D2F988A00DD6C44 /* PlaylistsVC.swift in Sources */,
 				338EE43F1D2F988A00DD6C44 /* Udacity_TVOS.xcdatamodeld in Sources */,
+				334174241D39805F00AC53BE /* SVProgressHUD.m in Sources */,
+				3341740D1D38CD0300AC53BE /* BaseVC.swift in Sources */,
+				3341741B1D39805F00AC53BE /* SVIndefiniteAnimatedView.m in Sources */,
 				334174011D370F6600AC53BE /* VideoPlayerVC.swift in Sources */,
+				334174271D39805F00AC53BE /* SVRadialGradientLayer.m in Sources */,
 				338EE4681D30721400DD6C44 /* YoutubeAPI.swift in Sources */,
 				338EE43A1D2F988A00DD6C44 /* AppDelegate.swift in Sources */,
 				3383D56C1D36EF8400C8AEF4 /* PlaylistItemsVC.swift in Sources */,
@@ -306,9 +378,14 @@
 				333D867D1D31C74C0069E5A7 /* Model.swift in Sources */,
 				3341740A1D37245200AC53BE /* HCYoutubeParser.m in Sources */,
 				3383D56D1D36EF8400C8AEF4 /* PlaylistItemsVC.swift in Sources */,
+				3341741C1D39805F00AC53BE /* SVIndefiniteAnimatedView.m in Sources */,
 				338EE4691D30721400DD6C44 /* YoutubeAPI.swift in Sources */,
+				3341741F1D39805F00AC53BE /* SVProgressAnimatedView.m in Sources */,
 				338EE44F1D2F988B00DD6C44 /* Udacity_TVOSTests.swift in Sources */,
+				334174251D39805F00AC53BE /* SVProgressHUD.m in Sources */,
+				3341740E1D38CD0300AC53BE /* BaseVC.swift in Sources */,
 				334174021D370F6600AC53BE /* VideoPlayerVC.swift in Sources */,
+				334174281D39805F00AC53BE /* SVRadialGradientLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,9 +396,14 @@
 				333D867E1D31C74C0069E5A7 /* Model.swift in Sources */,
 				3341740B1D37245200AC53BE /* HCYoutubeParser.m in Sources */,
 				3383D56E1D36EF8400C8AEF4 /* PlaylistItemsVC.swift in Sources */,
+				3341741D1D39805F00AC53BE /* SVIndefiniteAnimatedView.m in Sources */,
 				338EE46A1D30721400DD6C44 /* YoutubeAPI.swift in Sources */,
+				334174201D39805F00AC53BE /* SVProgressAnimatedView.m in Sources */,
 				338EE45A1D2F988B00DD6C44 /* Udacity_TVOSUITests.swift in Sources */,
+				334174261D39805F00AC53BE /* SVProgressHUD.m in Sources */,
+				3341740F1D38CD0300AC53BE /* BaseVC.swift in Sources */,
 				334174031D370F6600AC53BE /* VideoPlayerVC.swift in Sources */,
+				334174291D39805F00AC53BE /* SVRadialGradientLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
