@@ -75,13 +75,14 @@ class YoutubeAPI {
     func getPlaylistItems(playlistId: String) {
         let urlString = baseURL + playlistItemsSuffix + suffixParameters + "&playlistId=" + playlistId + APIkey
         let url = NSURL(string: urlString)
-        
+        SVProgressHUD.show()
         let task = NSURLSession.sharedSession().dataTaskWithURL(url!, completionHandler: {(data, reponse, error) in
             if error == nil {
                 do {
                     let jsonResults = try NSJSONSerialization.JSONObjectWithData(data!, options: [])
                     self.playlistItems = Playlist(dictionary: jsonResults as! NSDictionary)
                     NSNotificationCenter.defaultCenter().postNotificationName(YoutubePostNotification, object: nil)
+                    SVProgressHUD.dismiss()
                     //print(jsonResults)
                 } catch {
                     // failure

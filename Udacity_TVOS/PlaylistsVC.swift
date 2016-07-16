@@ -11,10 +11,10 @@ import UIKit
 class PlaylistsVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate {
     @IBOutlet weak var collectionView: UICollectionView!
     
-    let defaultFrameImg = CGRectMake(40, 0, 560, 300)
+    let defaultFrameImg = CGRectMake(40, 15, 550, 300)
     let focusFrameImg = CGRectMake(0, 0, 640, 360)
-    let defaultFrameLabel = CGRectMake(40, 315, 560, 30)
-    let focusFrameLabel = CGRectMake(0, 0, 560, 30)
+    let defaultFrameLabel = CGRectMake(40, 315, 550, 30)
+    let focusFrameLabel = CGRectMake(0, 315, 640, 30)
     
     var selectedIndexPath :NSIndexPath?
     
@@ -107,17 +107,16 @@ class PlaylistsVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
             let label = next.viewWithTag(Tag.Label.rawValue) as? UILabel
             UIView.animateWithDuration(0.1, animations: {() -> Void in
                 imgView?.frame = self.focusFrameImg
-                label?.frame = self.defaultFrameLabel
+                label?.frame = self.focusFrameLabel
             })
         }
     }
-    
     //MARK: UIScrollViewDelegate 
     func scrollViewDidScroll(scrollView: UIScrollView) {
         //getting the scroll offset
         let bottomEdge = scrollView.contentOffset.y + scrollView.frame.size.height
         if bottomEdge >= scrollView.contentSize.height && YoutubeAPI.sharedInstance.playlist != nil {
-            //we are at the bottom
+            //at the bottom of the view
             YoutubeAPI.sharedInstance.getNextPlaylistModel()
         }
     }

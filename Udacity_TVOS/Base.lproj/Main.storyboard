@@ -50,7 +50,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="T1K-cD-FrT">
-                                                    <rect key="frame" x="40" y="0.0" width="560" height="300"/>
+                                                    <rect key="frame" x="40" y="15" width="550" height="300"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IaB-ul-4OJ">
                                                     <rect key="frame" x="40" y="315" width="560" height="30"/>
@@ -68,12 +68,12 @@
                                         <color key="backgroundColor" red="0.86332070707070696" green="0.86332070707070696" blue="0.86332070707070696" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="IaB-ul-4OJ" firstAttribute="bottom" secondItem="M6D-6r-LK6" secondAttribute="bottomMargin" constant="-7" id="7oz-DQ-uqY"/>
-                                            <constraint firstItem="IaB-ul-4OJ" firstAttribute="centerX" secondItem="T1K-cD-FrT" secondAttribute="centerX" id="api-fh-kUu"/>
+                                            <constraint firstItem="IaB-ul-4OJ" firstAttribute="centerX" secondItem="T1K-cD-FrT" secondAttribute="centerX" constant="5" id="api-fh-kUu"/>
                                             <constraint firstItem="IaB-ul-4OJ" firstAttribute="leading" secondItem="M6D-6r-LK6" secondAttribute="leadingMargin" constant="32" id="cHN-Mn-pCG"/>
-                                            <constraint firstAttribute="bottom" secondItem="T1K-cD-FrT" secondAttribute="bottom" constant="60" id="gcs-bz-eiC"/>
+                                            <constraint firstAttribute="bottom" secondItem="T1K-cD-FrT" secondAttribute="bottom" constant="45" id="gcs-bz-eiC"/>
                                             <constraint firstItem="T1K-cD-FrT" firstAttribute="leading" secondItem="M6D-6r-LK6" secondAttribute="leading" constant="40" id="iGY-lq-jHf"/>
-                                            <constraint firstItem="T1K-cD-FrT" firstAttribute="top" secondItem="M6D-6r-LK6" secondAttribute="top" id="pnI-Rl-IDR"/>
-                                            <constraint firstAttribute="trailing" secondItem="T1K-cD-FrT" secondAttribute="trailing" constant="40" id="qPs-fp-9XQ"/>
+                                            <constraint firstItem="T1K-cD-FrT" firstAttribute="top" secondItem="M6D-6r-LK6" secondAttribute="top" constant="15" id="pnI-Rl-IDR"/>
+                                            <constraint firstAttribute="trailing" secondItem="T1K-cD-FrT" secondAttribute="trailing" constant="50" id="qPs-fp-9XQ"/>
                                         </constraints>
                                     </collectionViewCell>
                                 </cells>
